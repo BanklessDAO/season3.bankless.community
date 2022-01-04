@@ -27,32 +27,265 @@
   <link rel="shortcut icon" href="/favicon.ico" />
   <link rel="icon" type="image/png" sizes="33x33" href="/favicon.png" />
   <link rel="apple-touch-icon" type="image/png" sizes="33x33" href="/favicon.png" />
+  <style type="text/css">
+    @font-face {
+      font-family: "Clear Sans Bold";
+      src: url(assets/fonts/ClearSans-Bold.woff);
+    }
+
+    @font-face {
+      font-family: "Arial Bold";
+      src: url(assets/fonts/ARIALBD.woff);
+    }
+
+    #section-1 {
+      background: url(assets/images/demo_bg.png);
+      background-size: cover;
+      background-position: center;
+    }
+
+    #section-2 video {
+      right: 0;
+      bottom: 0;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background-size: 100% 100%;
+      background-position: 50%;
+      background-size: contain;
+      object-fit: cover;
+    }
+
+    #section-3 {
+      color: white;
+    }
+
+    #section-3 {
+      width: 100vw;
+      height: 100vh;
+      color: #fff;
+      max-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      place-content: center;
+      text-align: center;
+    }
+
+    .next-season-background {
+      width: 100vw;
+      height: 100vh;
+    }
+
+    .next-season-background-top,
+    .next-season-background-bottom {
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 100vw;
+      height: 100vh;
+      position: absolute;
+      top: 0;
+    }
+
+    .next-season-background-top {
+      background-image: url(assets/images/Season1-Endscreen-Top.jpg);
+      background-position: top;
+    }
+
+    .next-season-background-bottom {
+      background-image: url(assets/images/Season1-Endscreen-Bottom.jpg);
+      background-position: bottom;
+    }
+
+    .next-season-launch h1,
+    .next-season-launch p {
+      font-family: "Ariel Bold";
+    }
+
+    #section-3 .next-season-launch h1 {
+      font-size: 2.5em;
+    }
+
+    #section-3 .next-season-launch p {
+      margin: 0.8em;
+      font-size: 1.8em;
+    }
+
+    .red-underline {
+      border-bottom: 0.15em #D02128 solid;
+    }
+
+    #section-3 h1,
+    h2 {
+      font-family: "Clear Sans Bold";
+      line-height: 1em;
+      font-weight: bold;
+    }
+
+    #section-3 h1 {
+      font-size: 7em;
+      height: max-content;
+    }
+
+    #section-3 h2 .plus-icon {
+      font-size: 1em;
+      font-weight: bold;
+      color: #D02128;
+    }
+
+    #section-3 h2 {
+      font-size: 5em;
+      margin-top: 0.8em;
+    }
+
+    .calendar img {
+      width: 1em;
+      display: inline;
+      border-radius: 2px;
+    }
+
+    .cta-container {
+      margin-top: 5em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #section-3 .button {
+      font-family: "Arial Bold";
+      font-size: 1.6em;
+      padding: 0.5em 1.5em 0.5em 1.5em;
+      border-radius: 2em;
+      background-color: #FF000A;
+      outline: none;
+    }
+
+    a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    @media (max-width: 1280px) {
+      .intro h1 {
+        font-size: 3em;
+      }
+
+      .intro h2 {
+        font-size: 2.5em;
+      }
+    }
+
+    @media (max-width: 800px) {
+      .intro-text-container {
+        padding: 3em;
+      }
+
+      .next-season-background-bottom {
+        background-image: url(assets/images/Season1-Endscreen-Bottom-Mobile.jpg);
+        background-position: bottom;
+      }
+
+      #section-3 .next-season-launch h1 {
+        font-size: 1.3em;
+      }
+
+      #section-3 .next-season-launch p {
+        font-size: 1em;
+      }
+
+      #section-3 h1 {
+        font-size: 3em;
+      }
+
+      #section-3 h2 {
+        margin-top: 0.8em;
+        font-size: 2.5em;
+      }
+
+      #section-3 p {
+        font-size: 1em;
+      }
+
+      .cta-container {
+        margin-top: 2em;
+      }
+
+      #section-3 .button {
+        margin-top: 1em;
+        font-size: 1em;
+        padding: 0.5em 1.5em 0.5em 1.5em;
+      }
+
+      #section-3 .twitter {
+        height: 2em;
+        width: 2em;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
   <main class="max-h-screen overflow-y-scroll snap snap-y snap-mandatory">
-    <section
-      class="flex items-center justify-center w-full h-screen bg-center bg-cover snap-start bg-gradient-to-r from-sky-500 to-indigo-500">
-      <h1 class="text-2xl">BanklessDAO 🏴 Season 3 launch 🚀</h1>
+    <section id="section-1" class="flex items-center justify-center w-full h-screen bg-center bg-cover snap-start">
     </section>
-    <section
-      class="flex items-center justify-center w-full h-screen bg-center bg-cover snap-start bg-gradient-to-r from-violet-500 to-fuchsia-500">
-      Achievements
+    <section id="section-2" class="flex items-center justify-center w-full h-screen bg-center bg-cover snap-start">
+      <video autoplay muted loop id="myVideo">
+        <source src="assets/videos/demo_video.mp4" type="video/mp4">
+      </video>
     </section>
-    <section
-      class="flex items-center justify-center w-full h-screen bg-center bg-cover snap-start bg-gradient-to-r from-purple-500 to-pink-500">
-      <h1 class="text-2xl">Season 3 Launch</h1>
-      <h2 class="text-xl">January 17 2022, at 17 PM CEST</h2>
-      <h2 class="text-xl">in Twitter Spaces</h2>
-      BANKLESS
-      DAO + HQ
-      Agenda
-      RSVP
+    <section id="section-3"
+      class="flex items-center justify-center w-full h-screen bg-center bg-cover snap-start bg-black">
+      <h1>Season 3 Launch</h1>
+      <p class="text-xl mt-2">
+        <a class="calendar" title="Add to Calendar" target="_blank"
+          href="http://www.google.com/calendar/event?action=TEMPLATE&dates=20211008T150000Z%2F20211008T160000Z&text=BanklessDAO%20Season%202%20launch&location=https%3A%2F%2Ftwitter.com%2FBanklessHQ&details=Agenda%3A%20https%3A%2F%2Fwww.notion.so%2Fbankless%2FSeason-2-Launch-7d06aaf56df444d48cd0d551edadebdc">
+          <img src="assets/images/date.jpg" /> <span class="date">January 17 2022</span>, at <span class="time">11
+            AM EDT</span>
+        </a>
+      </p>
+      <p class="text-xl mt-2">
+        in <a class="twitter" target="_blank" href="https://twitter.com/BanklessHQ">Twitter
+          Spaces</a>
+      </p>
+      </div>
+      <h1>
+        <span class="red-underline">BANKLESS</span>
+        <br />
+        <h2><span class="red-underline">DAO</span></span><span class="plus-icon"> +
+          </span><span class="red-underline">HQ</span>
+        </h2>
+      </h1>
+      <div class="cta-container">
+        <a class="button" style="margin-right: 1em;" target="_blank"
+          href="https://www.notion.so/bankless/Season-2-Launch-7d06aaf56df444d48cd0d551edadebdc">Agenda</a>
+        <a class="button" target="_blank"
+          href="http://www.google.com/calendar/event?action=TEMPLATE&dates=20211008T150000Z%2F20211008T160000Z&text=BanklessDAO%20Season%202%20launch&location=https%3A%2F%2Ftwitter.com%2FBanklessHQ&details=Agenda%3A%20https%3A%2F%2Fwww.notion.so%2Fbankless%2FSeason-2-Launch-7d06aaf56df444d48cd0d551edadebdc">RSVP</a>
+      </div>
     </section>
   </main>
   <script async defer data-website-id="68dc5751-646f-4053-b68b-c36abe62d04b"
     src="https://umami.bankless.community/umami.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+    integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.33/moment-timezone-with-data-2012-2022.min.js"
+    integrity="sha512-xFvEGAiMhvg1LBpa1KLutjlVHXSfe7Fq9dpAFqkRoSb31oZXIBTCxxhdmoXtJBbiQJk3RDu1GYfb8+OWqF9ehA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script type="text/javascript">
+    // dynamic launch time based on user timezone
+    const season2LaunchEventTimeInIST = moment.tz("2022-01-17 11:00", "America/New_York")
+    const userTimeZone = moment.tz.guess(true);
+    const eventTimeMinutes = season2LaunchEventTimeInIST.tz(userTimeZone).format("mm")
+    $('.date').text(season2LaunchEventTimeInIST.tz(userTimeZone).format("MMMM D YYYY"))
+    eventTimeMinutes === "00" ? $('.time').text(season2LaunchEventTimeInIST.tz(userTimeZone).format("HH A z")) : $('.time').text(season2LaunchEventTimeInIST.tz(userTimeZone).format("HH:mm A z"))
+    // TODO: auto launch video when showing slide?
+    // TODO: auto-scroll?
+  </script>
 </body>
 
 </html>
