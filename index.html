@@ -14,7 +14,7 @@
   <meta property="og:url" content="https://season3.bankless.community/" />
   <meta property="og:title" content="Season 3 | BanklessDAO" />
   <meta property="og:description" content="You are invite for BanklessDAO 🏴 Season 3 launch 🚀" />
-  <meta property="og:image" content="https://season3.bankless.community/assets/images/Season3-invitation.jpg" />
+  <meta property="og:image" content="https://season3.bankless.community/assets/images/Season3-invitation-v1.jpg" />
   <meta property="og:image:width" content="600" />
   <meta property="og:image:height" content="330" />
   <!-- Twitter -->
@@ -22,7 +22,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Season 3 | BanklessDAO" />
   <meta name="twitter:description" content="You are invite for BanklessDAO 🏴 Season 3 launch 🚀" />
-  <meta name="twitter:image" content="https://season3.bankless.community/assets/images/Season3-invitation.jpg" />
+  <meta name="twitter:image" content="https://season3.bankless.community/assets/images/Season3-invitation-v1.jpg" />
   <!-- favicons -->
   <link rel="shortcut icon" href="/favicon.ico" />
   <link rel="icon" type="image/png" sizes="33x33" href="/favicon.png" />
@@ -38,13 +38,15 @@
       src: url(assets/fonts/ARIALBD.woff);
     }
 
-    #section-1 {
+    /* #section-1 {
       background: url(assets/images/demo_bg.png);
       background-size: cover;
       background-position: center;
-    }
+    } */
 
-    #section-2 video {
+    #section-1 video,
+    #section-2 video,
+    #section-3 video {
       right: 0;
       bottom: 0;
       top: 0;
@@ -229,39 +231,45 @@
 
   <main class="max-h-screen overflow-y-scroll snap snap-y snap-mandatory">
     <section id="section-1" class="flex items-center justify-center w-full h-screen bg-center bg-cover snap-start">
-    </section>
-    <section id="section-2" class="flex items-center justify-center w-full h-screen bg-center bg-cover snap-start">
-      <video autoplay muted loop id="myVideo">
-        <source src="assets/videos/demo_video.mp4" type="video/mp4">
+      <video autoplay muted loop id="myVideo1">
+        <source src="assets/videos/demo_video_1.mp4" type="video/mp4">
       </video>
     </section>
-    <section id="section-3"
-      class="flex items-center justify-center w-full h-screen bg-center bg-cover snap-start bg-black">
-      <h1>Season 3 Launch</h1>
-      <p class="text-xl mt-2">
-        <a class="calendar" title="Add to Calendar" target="_blank"
-          href="http://www.google.com/calendar/event?action=TEMPLATE&dates=20211008T150000Z%2F20211008T160000Z&text=BanklessDAO%20Season%202%20launch&location=https%3A%2F%2Ftwitter.com%2FBanklessHQ&details=Agenda%3A%20https%3A%2F%2Fwww.notion.so%2Fbankless%2FSeason-2-Launch-7d06aaf56df444d48cd0d551edadebdc">
-          <img src="assets/images/date.jpg" /> <span class="date">January 21 2022</span>, at <span class="time">11
-            AM EDT</span>
-        </a>
-      </p>
-      <p class="text-xl mt-2">
-        in <a class="twitter" target="_blank" href="https://twitter.com/BanklessHQ">Twitter
-          Spaces</a>
-      </p>
-      </div>
-      <h1>
-        <span class="red-underline">BANKLESS</span>
-        <br />
-        <h2><span class="red-underline">DAO</span></span><span class="plus-icon"> +
-          </span><span class="red-underline">HQ</span>
-        </h2>
-      </h1>
-      <div class="cta-container">
-        <a class="button" style="margin-right: 1em;" target="_blank"
-          href="https://www.notion.so/bankless/Season-2-Launch-7d06aaf56df444d48cd0d551edadebdc">Agenda</a>
-        <a class="button" target="_blank"
-          href="http://www.google.com/calendar/event?action=TEMPLATE&dates=20211008T150000Z%2F20211008T160000Z&text=BanklessDAO%20Season%202%20launch&location=https%3A%2F%2Ftwitter.com%2FBanklessHQ&details=Agenda%3A%20https%3A%2F%2Fwww.notion.so%2Fbankless%2FSeason-2-Launch-7d06aaf56df444d48cd0d551edadebdc">RSVP</a>
+    <section id="section-2" class="flex items-center justify-center w-full h-screen bg-center bg-cover snap-start">
+      <video autoplay muted loop id="myVideo2">
+        <source src="assets/videos/demo_video_2.mp4" type="video/mp4">
+      </video>
+    </section>
+    <section id="section-3" class="flex items-center justify-center w-full h-screen bg-center bg-cover snap-start relative">
+      <video autoplay muted loop id="myVideo3">
+        <source src="assets/videos/demo_video_3.mp4" type="video/mp4">
+      </video>
+      <div class="absolute">
+        <h1>Season 3 Launch</h1>
+        <p class="text-xl mt-2">
+          <a class="calendar" title="Add to Calendar" target="_blank"
+            href="http://www.google.com/calendar/event?action=TEMPLATE&dates=20211008T150000Z%2F20211008T160000Z&text=BanklessDAO%20Season%202%20launch&location=https%3A%2F%2Ftwitter.com%2FBanklessHQ&details=Agenda%3A%20https%3A%2F%2Fwww.notion.so%2Fbankless%2FSeason-2-Launch-7d06aaf56df444d48cd0d551edadebdc">
+            <img src="assets/images/date.jpg" /> <span class="date">January 21 2022</span>, at <span class="time">11
+              AM EDT</span>
+          </a>
+        </p>
+        <p class="text-xl mt-2">
+          in <a class="twitter" target="_blank" href="https://twitter.com/BanklessHQ">Twitter
+            Spaces</a>
+        </p>
+        <h1>
+          <span class="red-underline">BANKLESS</span>
+          <br />
+          <h2><span class="red-underline">DAO</span></span><span class="plus-icon"> +
+            </span><span class="red-underline">HQ</span>
+          </h2>
+        </h1>
+        <div class="cta-container">
+          <a class="button" style="margin-right: 1em;" target="_blank"
+            href="https://www.notion.so/bankless/Season-2-Launch-7d06aaf56df444d48cd0d551edadebdc">Agenda</a>
+          <a class="button" target="_blank"
+            href="http://www.google.com/calendar/event?action=TEMPLATE&dates=20211008T150000Z%2F20211008T160000Z&text=BanklessDAO%20Season%202%20launch&location=https%3A%2F%2Ftwitter.com%2FBanklessHQ&details=Agenda%3A%20https%3A%2F%2Fwww.notion.so%2Fbankless%2FSeason-2-Launch-7d06aaf56df444d48cd0d551edadebdc">RSVP</a>
+        </div>
       </div>
     </section>
   </main>
