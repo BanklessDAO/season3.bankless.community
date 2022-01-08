@@ -59,6 +59,19 @@
       object-fit: cover;
     }
 
+    .bankless-red-underline {
+      border-bottom: 0.15em #D02128 solid;
+    }
+
+    .bankless-red-left {
+      border-left: 0.3em #D02128 solid;
+      padding-left: 1em;
+    }
+
+    .bankless-red {
+      color: #D02128;
+    }
+
     #section-3 {
       color: white;
     }
@@ -112,10 +125,6 @@
     #section-3 .next-season-launch p {
       margin: 0.8em;
       font-size: 1.8em;
-    }
-
-    .red-underline {
-      border-bottom: 0.15em #D02128 solid;
     }
 
     #section-3 h1,
@@ -230,17 +239,47 @@
 <body>
 
   <main class="max-h-screen overflow-y-scroll snap snap-y snap-mandatory">
-    <section id="section-1" class="flex items-center justify-center w-full h-screen bg-center bg-cover snap-start">
+    <section id="section-1"
+      class="flex relative items-center justify-center bg-black w-full h-screen bg-center bg-cover snap-start text-white">
       <video autoplay muted loop id="myVideo1">
         <source src="assets/videos/demo_video_1.mp4" type="video/mp4">
       </video>
+      <!-- Intro -->
+      <div class="absolute max-w-[100%]">
+        <div class="text-8xl font-bold max-w-[90%] fit">
+          BANKLESS&nbsp;<span class="bankless-red-underline">DAO</span>
+        </div>
+        <div class="grid grid-rows-2 grid-flow-col gap-4 float-right w-fit mt-12 text-4xl font-bold">
+          <div class="col-span-1">Season</div>
+          <div class="row-span-1 col-span-1">Launch</div>
+          <div class="row-span-2 text-8xl bankless-red">3</div>
+        </div>
+      </div>
+      <!-- Season 3 Launch -->
+      <div class="absolute bottom-20 left-10 bankless-red-left">
+        <div>Season 3 Launch</div>
+        <p>Join us on Twitter spaces, <span class="date">January 21 2022</span>
+          <br />RSVP below 👇
+          <br />The possibilities of a DAO are endless!
+        </p>
+      </div>
+      <!-- Arrow down -->
+      <div class="absolute bottom-5 right-5" style="text-align: -webkit-right">
+        <div class="animate-bounce w-6 h-6">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 17l-4 4m0 0l-4-4m4 4V3" />
+          </svg>
+        </div>
+        scroll down
+      </div>
     </section>
     <section id="section-2" class="flex items-center justify-center w-full h-screen bg-center bg-cover snap-start">
       <video autoplay muted loop id="myVideo2">
         <source src="assets/videos/demo_video_2.mp4" type="video/mp4">
       </video>
     </section>
-    <section id="section-3" class="flex items-center justify-center w-full h-screen bg-center bg-cover snap-start relative">
+    <section id="section-3"
+      class="flex items-center justify-center w-full h-screen bg-center bg-cover snap-start relative">
       <video autoplay muted loop id="myVideo3">
         <source src="assets/videos/demo_video_3.mp4" type="video/mp4">
       </video>
@@ -258,10 +297,10 @@
             Spaces</a>
         </p>
         <h1>
-          <span class="red-underline">BANKLESS</span>
+          <span class="bankless-red-underline">BANKLESS</span>
           <br />
-          <h2><span class="red-underline">DAO</span></span><span class="plus-icon"> +
-            </span><span class="red-underline">HQ</span>
+          <h2><span class="bankless-red-underline">DAO</span></span><span class="plus-icon"> +
+            </span><span class="bankless-red-underline">HQ</span>
           </h2>
         </h1>
         <div class="cta-container">
@@ -275,6 +314,9 @@
   </main>
   <script async defer data-website-id="68dc5751-646f-4053-b68b-c36abe62d04b"
     src="https://umami.bankless.community/umami.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/textfit/2.4.0/textFit.min.js"
+    integrity="sha512-vLs5rAqfvmv/IpN7JustROkGAvjK/L+vgVDFe7KpdtLztqF8mZDfleK2MZj/xuOrWjma0pW+lPCMcBbPKJVC7g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
     integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -285,6 +327,9 @@
     integrity="sha512-xFvEGAiMhvg1LBpa1KLutjlVHXSfe7Fq9dpAFqkRoSb31oZXIBTCxxhdmoXtJBbiQJk3RDu1GYfb8+OWqF9ehA=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script type="text/javascript">
+    // resize text if window width < 1000px
+    if (window.innerWidth < 1000)
+      textFit(document.getElementsByClassName('fit'))
     // dynamic launch time based on user timezone
     const season2LaunchEventTimeInIST = moment.tz("2022-01-21 11:00", "America/New_York")
     const userTimeZone = moment.tz.guess(true);
