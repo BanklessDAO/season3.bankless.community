@@ -74,7 +74,7 @@ Join the Bankless DAO dev team: https://discord.gg/MFC2eHjhGQ
     }
 
     .bankless-red-underline {
-      padding-bottom: 0.15em;
+      padding-bottom: 0.10em;
       border-bottom: 0.15em #D02128 solid;
     }
 
@@ -101,19 +101,19 @@ Join the Bankless DAO dev team: https://discord.gg/MFC2eHjhGQ
 
   <main class="max-h-screen overflow-y-scroll snap snap-y snap-mandatory text-white">
     <section id="section-1"
-      class="flex relative items-center justify-center bg-black w-full h-screen bg-center bg-cover snap-start">
-      <video autoplay muted loop id="myVideo1">
-        <source src="assets/videos/demo_video_1.mp4" type="video/mp4">
-      </video>
+      class="flex relative items-center justify-center bg-black w-full h-screen bg-center bg-cover snap-start bg-[url('assets/videos/S01-Rocket-Launch.webp')]">
+      <audio loop autoplay>
+        <source src="assets/videos/BL_S03_Invite_Soundtrack.mp3" type="audio/mpeg">
+      </audio>
       <!-- Intro -->
       <div class="absolute max-w-[100%] bankless-font">
         <div class="text-8xl font-bold max-w-[90%] fit">
           BANKLESS&nbsp;<span class="bankless-red-underline">DAO</span>
         </div>
-        <div class="grid grid-rows-2 grid-flow-col gap-4 float-right w-fit mt-12 text-4xl font-bold">
+        <div class="grid grid-rows-2 grid-flow-col items-center gap-4 float-right w-fit mt-20 text-4xl font-bold">
           <div class="col-span-1">Season</div>
           <div class="row-span-1 col-span-1">Launch</div>
-          <div class="row-span-2 text-8xl bankless-red">3</div>
+          <div class="row-span-2 text-9xl bankless-red">3</div>
         </div>
       </div>
       <!-- Season 3 Launch -->
@@ -134,9 +134,10 @@ Join the Bankless DAO dev team: https://discord.gg/MFC2eHjhGQ
         scroll down
       </div>
     </section>
-    <section id="section-2" class="flex items-center justify-center w-full h-screen bg-center bg-cover snap-start">
+    <section id="section-2"
+      class="flex items-center justify-center w-full h-screen bg-center bg-cover snap-start bg-[url('assets/videos/S02-Projects.webp')]">
       <video autoplay muted loop id="myVideo2">
-        <source src="assets/videos/demo_video_2.mp4" type="video/mp4">
+        <source src="assets/videos/S02_Projects.mp4" type="video/mp4">
       </video>
       <!-- Arrow down -->
       <div class="absolute bottom-5 right-5" style="text-align: -webkit-right">
@@ -149,11 +150,11 @@ Join the Bankless DAO dev team: https://discord.gg/MFC2eHjhGQ
       </div>
     </section>
     <section id="section-3"
-      class="flex items-center justify-center w-full bg-black h-screen bg-center bg-cover snap-start relative">
+      class="flex items-center justify-center w-full bg-black h-screen bg-center bg-cover snap-start relative bg-[url('assets/videos/S03A-Background.webp')]">
       <video autoplay muted loop id="myVideo3">
-        <source src="assets/videos/demo_video_3.mp4" type="video/mp4">
+        <source src="assets/videos/S03A_Background.mp4" type="video/mp4">
       </video>
-      <div class="absolute max-w-[90%] text-center">
+      <div class="absolute max-w-[92%] text-center p-10 bg-black/30 rounded-lg">
         <div class="text-4xl font-bold fit">Season&nbsp;3&nbsp;Launch</div>
         <div class="text-3xl mt-3">
           <a title="Add to Calendar" target="_blank"
@@ -164,8 +165,9 @@ Join the Bankless DAO dev team: https://discord.gg/MFC2eHjhGQ
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                   d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
               </svg>
-              <span class="date ml-1">January 21 2022</span>
-              , at&nbsp;<span class="time">11 AM EST</span>
+              <div class="text-lg">
+                <span class="date ml-1">January 21 2022</span>,&nbsp;at&nbsp;<span class="time">11 AM EST</span>
+              </div>
             </div>
           </a>
         </div>
@@ -174,13 +176,13 @@ Join the Bankless DAO dev team: https://discord.gg/MFC2eHjhGQ
             Spaces</a>
         </div>
         <div>
-          <div class="text-8xl font-bold bankless-red-underline fit bankless-font">BANKLESS</div>
-          <div class="text-7xl font-bold mt-8 text-center bankless-font">
+          <div class="text-8xl font-bold fit bankless-font">BANKLESS</div>
+          <div class="flex justify-center text-7xl font-bold mt-8 text-center bankless-font">
             <span class="bankless-red-underline">DAO</span>
             <span class="bankless-red">+</span>
             <span class="bankless-red-underline">HQ</span>
           </div>
-          <div class="text-2xl font-bold mt-20 text-center">
+          <div class="flex justify-center text-2xl font-bold mt-20 text-center">
             <a class="rounded-full bankless-bg-red hover:bg-red-800 py-3 px-7 mr-4" target="_blank"
               href="https://www.notion.so/bankless/Season-3-Launch-January-21st-2022-11am-12-15pm-EST-024fcdf148aa4307b2e121738b2b8399">Agenda</a>
             <a class="rounded-full bankless-bg-red hover:bg-red-800 py-3 px-7" target="_blank"
@@ -214,7 +216,6 @@ Join the Bankless DAO dev team: https://discord.gg/MFC2eHjhGQ
     $('.date').text(season2LaunchEventTimeInIST.tz(userTimeZone).format("MMMM D YYYY"))
     eventTimeMinutes === "00" ? $('.time').text(season2LaunchEventTimeInIST.tz(userTimeZone).format("HH A z")) : $('.time').text(season2LaunchEventTimeInIST.tz(userTimeZone).format("HH:mm A z"))
     // TODO: auto launch video when showing slide?
-    // TODO: auto-scroll?
   </script>
 </body>
 
