@@ -181,7 +181,7 @@ Join the Bankless DAO dev team: https://discord.gg/MFC2eHjhGQ
         .hytPlayerWrap.paused::after {
           content: "";
           position: absolute;
-          top: 70px;
+          top: 0px;
           left: 0;
           bottom: 50px;
           right: 0;
@@ -195,7 +195,9 @@ Join the Bankless DAO dev team: https://discord.gg/MFC2eHjhGQ
       </style>
       <div class="hytPlayerWrapOuter">
         <div class="hytPlayerWrap"> <iframe width="640" height="360"
-            src="https://www.youtube.com/embed/m1J_IGZl-QA?rel=0&enablejsapi=1" frameborder="0"></iframe></div>
+            src="https://www.youtube.com/embed/m1J_IGZl-QA?rel=0&enablejsapi=1"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen frameborder="0"></iframe></div>
       </div>
       <script>"use strict"; document.addEventListener('DOMContentLoaded', function () { if (window.hideYTActivated) return; if (typeof YT === 'undefined') { let tag = document.createElement('script'); tag.src = "https://www.youtube.com/iframe_api"; let firstScriptTag = document.getElementsByTagName('script')[0]; firstScriptTag.parentNode.insertBefore(tag, firstScriptTag); } let onYouTubeIframeAPIReadyCallbacks = []; for (let playerWrap of document.querySelectorAll(".hytPlayerWrap")) { let playerFrame = playerWrap.querySelector("iframe"); let onPlayerStateChange = function (event) { if (event.data == YT.PlayerState.ENDED) { playerWrap.classList.add("ended"); } else if (event.data == YT.PlayerState.PAUSED) { playerWrap.classList.add("paused"); } else if (event.data == YT.PlayerState.PLAYING) { playerWrap.classList.remove("ended"); playerWrap.classList.remove("paused"); } }; let player; onYouTubeIframeAPIReadyCallbacks.push(function () { player = new YT.Player(playerFrame, { events: { 'onStateChange': onPlayerStateChange } }); }); playerWrap.addEventListener("click", function () { let playerState = player.getPlayerState(); if (playerState == YT.PlayerState.ENDED) { player.seekTo(0); } else if (playerState == YT.PlayerState.PAUSED) { player.playVideo(); } }); } window.onYouTubeIframeAPIReady = function () { for (let callback of onYouTubeIframeAPIReadyCallbacks) { callback(); } }; window.hideYTActivated = true; });</script>
       <!-- Arrow down -->
