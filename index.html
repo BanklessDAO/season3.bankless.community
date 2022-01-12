@@ -38,9 +38,11 @@ Join the Bankless DAO dev team: https://discord.gg/MFC2eHjhGQ
   <meta name="twitter:description" content="You are invite for BanklessDAO 🏴 Season 3 launch 🚀" />
   <meta name="twitter:image" content="https://season3.bankless.community/assets/images/Season3-invitation.jpg?v1" />
   <!-- favicons -->
-  <link rel="shortcut icon" href="/favicon.ico" />
-  <link rel="icon" type="image/png" sizes="33x33" href="/favicon.png" />
-  <link rel="apple-touch-icon" type="image/png" sizes="33x33" href="/favicon.png" />
+  <link rel="shortcut icon" href="favicon.ico" />
+  <link rel="icon" type="image/png" sizes="33x33" href="favicon.png" />
+  <link rel="apple-touch-icon" type="image/png" sizes="33x33" href="favicon.png" />
+  <!-- style -->
+  <link href="assets/css/jquery.mb.YTPlayer.min.css" media="all" rel="stylesheet" type="text/css">
   <style type="text/css">
     @font-face {
       font-family: "Clear Sans Bold";
@@ -50,27 +52,6 @@ Join the Bankless DAO dev team: https://discord.gg/MFC2eHjhGQ
     @font-face {
       font-family: "Arial Bold";
       src: url(assets/fonts/ARIALBD.woff);
-    }
-
-    /* #section-1 {
-      background: url(assets/images/demo_bg.png);
-      background-size: cover;
-      background-position: center;
-    } */
-
-    #section-1 video,
-    #section-2 video,
-    #section-3 video {
-      right: 0;
-      bottom: 0;
-      top: 0;
-      right: 0;
-      width: 100%;
-      height: 100%;
-      background-size: 100% 100%;
-      background-position: 50%;
-      background-size: contain;
-      object-fit: cover;
     }
 
     .bankless-red-underline {
@@ -101,9 +82,9 @@ Join the Bankless DAO dev team: https://discord.gg/MFC2eHjhGQ
 
   <main class="max-h-screen overflow-y-scroll snap snap-y snap-mandatory text-white">
     <section id="section-1"
-      class="flex relative items-center justify-center bg-black w-full h-screen bg-center bg-cover snap-start bg-[url('assets/videos/S01-Rocket-Launch.webp')]">
+      class="flex relative items-center justify-center bg-black w-full h-screen bg-center bg-cover snap-start bg-[url('assets/videos/S01-Rocket-Launch-v2.webp')]">
       <audio loop autoplay>
-        <source src="assets/videos/BL_S03_Invite_Soundtrack.mp3" type="audio/mpeg">
+        <source src="assets/audio/BL_S03_Invite_Soundtrack.mp3" type="audio/mpeg">
       </audio>
       <!-- Intro -->
       <div class="absolute max-w-[100%] bankless-font">
@@ -134,11 +115,8 @@ Join the Bankless DAO dev team: https://discord.gg/MFC2eHjhGQ
         scroll down
       </div>
     </section>
-    <section id="section-2"
-      class="flex items-center justify-center w-full h-screen bg-center bg-cover snap-start bg-[url('assets/videos/S02-Projects.webp')]">
-      <video autoplay muted loop id="myVideo2">
-        <source src="assets/videos/S02_Projects.mp4" type="video/mp4">
-      </video>
+    <section id="section-2" class="relative bg-black w-full h-screen bg-center bg-cover snap-start">
+      <div id="section-2-player" class="player flex items-center justify-center w-full h-screen bg-center"></div>
       <!-- Arrow down -->
       <div class="absolute bottom-5 right-5" style="text-align: -webkit-right">
         <div class="animate-bounce w-6 h-6">
@@ -151,9 +129,6 @@ Join the Bankless DAO dev team: https://discord.gg/MFC2eHjhGQ
     </section>
     <section id="section-3"
       class="flex items-center justify-center w-full bg-black h-screen bg-center bg-cover snap-start relative bg-[url('assets/videos/S03A-Background.webp')]">
-      <video autoplay muted loop id="myVideo3">
-        <source src="assets/videos/S03A_Background.mp4" type="video/mp4">
-      </video>
       <div class="absolute max-w-[92%] text-center p-10 bg-black/30 rounded-lg">
         <div class="text-4xl font-bold fit">Season&nbsp;3&nbsp;Launch</div>
         <div class="text-3xl mt-3">
@@ -191,6 +166,7 @@ Join the Bankless DAO dev team: https://discord.gg/MFC2eHjhGQ
         </div>
     </section>
   </main>
+  <!-- javascript -->
   <script async defer data-website-id="b8e9e4c4-3bca-4661-b383-12a996c5415a"
     src="https://umami.bankless.community/umami.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/textfit/2.4.0/textFit.min.js"
@@ -205,7 +181,12 @@ Join the Bankless DAO dev team: https://discord.gg/MFC2eHjhGQ
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.33/moment-timezone-with-data-2012-2022.min.js"
     integrity="sha512-xFvEGAiMhvg1LBpa1KLutjlVHXSfe7Fq9dpAFqkRoSb31oZXIBTCxxhdmoXtJBbiQJk3RDu1GYfb8+OWqF9ehA=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="assets/js/jquery.mb.YTPlayer.min.js"></script>
   <script type="text/javascript">
+    // load background videos
+    $(function () {
+      $('#section-2-player').YTPlayer({ videoURL: 'm1J_IGZl-QA', containment: 'self', autoPlay: true, loop: true, mute: true, startAt: 0, opacity: 1, showControls: false, realfullscreen: true, optimizeDisplay: true, anchor: 'center center' })
+    });
     // resize text if window width < 1000px
     if (window.innerWidth < 1000)
       textFit(document.getElementsByClassName('fit'))
