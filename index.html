@@ -42,7 +42,6 @@ Join the Bankless DAO dev team: https://discord.gg/MFC2eHjhGQ
   <link rel="icon" type="image/png" sizes="33x33" href="favicon.png" />
   <link rel="apple-touch-icon" type="image/png" sizes="33x33" href="favicon.png" />
   <!-- style -->
-  <link href="assets/css/jquery.mb.YTPlayer.min.css" media="all" rel="stylesheet" type="text/css">
   <style type="text/css">
     @font-face {
       font-family: "Clear Sans Bold";
@@ -71,6 +70,11 @@ Join the Bankless DAO dev team: https://discord.gg/MFC2eHjhGQ
       #section-3 {
         background-image: url(assets/videos/S03A-Background-v2.gif);
       }
+    }
+
+    video {
+      width: 100%;
+      height: 100%;
     }
 
     .bankless-red-underline {
@@ -134,8 +138,11 @@ Join the Bankless DAO dev team: https://discord.gg/MFC2eHjhGQ
         scroll down
       </div>
     </section>
-    <section id="section-2" class="relative bg-black w-screen h-screen bg-center bg-cover snap-start">
-      <div id="section-2-player"></div>
+    <section id="section-2"
+      class="flex relative items-center justify-center bg-black w-screen h-screen bg-center bg-cover snap-start">
+      <video autoplay muted loop id="myVideo2">
+        <source src="assets/videos/S02_Projects_v2.mp4" type="video/mp4">
+      </video>
       <!-- Arrow down -->
       <div class="absolute bottom-5 right-5" style="text-align: -webkit-right">
         <div class="animate-bounce w-6 h-6">
@@ -200,23 +207,7 @@ Join the Bankless DAO dev team: https://discord.gg/MFC2eHjhGQ
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.33/moment-timezone-with-data-2012-2022.min.js"
     integrity="sha512-xFvEGAiMhvg1LBpa1KLutjlVHXSfe7Fq9dpAFqkRoSb31oZXIBTCxxhdmoXtJBbiQJk3RDu1GYfb8+OWqF9ehA=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="assets/js/jquery.mb.YTPlayer.min.js"></script>
   <script type="text/javascript">
-    // load background videos
-    $(function () {
-      $('#section-2-player').YTPlayer({
-        videoURL: 'm1J_IGZl-QA',
-        containment: '#section-2',
-        autoPlay: true,
-        loop: true,
-        mute: true,
-        startAt: 0,
-        opacity: 1,
-        showControls: false,
-        realfullscreen: true,
-        optimizeDisplay: true,
-      })
-    });
     // resize text if window width < 1000px
     if (window.innerWidth < 1000)
       textFit(document.getElementsByClassName('fit'))
@@ -226,7 +217,6 @@ Join the Bankless DAO dev team: https://discord.gg/MFC2eHjhGQ
     const eventTimeMinutes = season2LaunchEventTimeInIST.tz(userTimeZone).format("mm")
     $('.date').text(season2LaunchEventTimeInIST.tz(userTimeZone).format("MMMM D YYYY"))
     eventTimeMinutes === "00" ? $('.time').text(season2LaunchEventTimeInIST.tz(userTimeZone).format("HH A z")) : $('.time').text(season2LaunchEventTimeInIST.tz(userTimeZone).format("HH:mm A z"))
-    // TODO: auto launch video when showing slide?
   </script>
 </body>
 
