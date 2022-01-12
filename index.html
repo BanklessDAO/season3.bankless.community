@@ -120,7 +120,7 @@ Join the Bankless DAO dev team: https://discord.gg/MFC2eHjhGQ
   <main class="max-h-screen overflow-y-scroll snap snap-y snap-mandatory text-white">
     <section id="section-1"
       class="flex relative items-center justify-center bg-black w-screen h-screen bg-center bg-cover snap-start">
-      <audio loop autoplay>
+      <audio id="audio" loop autoplay>
         <source src="assets/audio/BL_S03_Invite_Soundtrack.mp3" type="audio/mpeg">
       </audio>
       <!-- Intro -->
@@ -226,24 +226,13 @@ Join the Bankless DAO dev team: https://discord.gg/MFC2eHjhGQ
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.33/moment-timezone-with-data-2012-2022.min.js"
     integrity="sha512-xFvEGAiMhvg1LBpa1KLutjlVHXSfe7Fq9dpAFqkRoSb31oZXIBTCxxhdmoXtJBbiQJk3RDu1GYfb8+OWqF9ehA=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <!-- <script src="assets/js/jquery.mb.YTPlayer.min.js"></script> -->
   <script type="text/javascript">
-    // load background videos
+    // autoplay audio
     $(function () {
-      // $('#section-2-player').YTPlayer({
-      //   videoURL: 'm1J_IGZl-QA',
-      //   containment: 'self',
-      //   autoPlay: true,
-      //   loop: true,
-      //   mute: true,
-      //   startAt: 0,
-      //   opacity: 1,
-      //   showControls: false,
-      //   realfullscreen: true,
-      //   optimizeDisplay: true,
-      //   ratio: '16/9'
-      // })
-    });
+      $("body").click(function (event) {
+        document.getElementById('audio').play()
+      })
+    })
     // resize text if window width < 1000px
     if (window.innerWidth < 1000)
       textFit(document.getElementsByClassName('fit'))
@@ -253,7 +242,6 @@ Join the Bankless DAO dev team: https://discord.gg/MFC2eHjhGQ
     const eventTimeMinutes = season2LaunchEventTimeInIST.tz(userTimeZone).format("mm")
     $('.date').text(season2LaunchEventTimeInIST.tz(userTimeZone).format("MMMM D YYYY"))
     eventTimeMinutes === "00" ? $('.time').text(season2LaunchEventTimeInIST.tz(userTimeZone).format("HH A z")) : $('.time').text(season2LaunchEventTimeInIST.tz(userTimeZone).format("HH:mm A z"))
-    // TODO: auto launch video when showing slide?
   </script>
 </body>
 
