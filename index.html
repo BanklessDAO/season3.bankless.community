@@ -54,6 +54,25 @@ Join the Bankless DAO dev team: https://discord.gg/MFC2eHjhGQ
       src: url(assets/fonts/ARIALBD.woff);
     }
 
+    #section-1 {
+      background-image: url(assets/videos/S01-Rocket-Launch-v2.webp);
+    }
+
+    #section-3 {
+      background-image: url(assets/videos/S03A-Background-v2.webp);
+    }
+
+    /* mobile + tablet optimization */
+    @media (max-width: 1024px) {
+      #section-1 {
+        background-image: url(assets/videos/S01-Rocket-Launch-v2.gif);
+      }
+
+      #section-3 {
+        background-image: url(assets/videos/S03A-Background-v2.gif);
+      }
+    }
+
     .bankless-red-underline {
       padding-bottom: 0.10em;
       border-bottom: 0.15em #D02128 solid;
@@ -82,7 +101,7 @@ Join the Bankless DAO dev team: https://discord.gg/MFC2eHjhGQ
 
   <main class="max-h-screen overflow-y-scroll snap snap-y snap-mandatory text-white">
     <section id="section-1"
-      class="flex relative items-center justify-center bg-black w-full h-screen bg-center bg-cover snap-start bg-[url('assets/videos/S01-Rocket-Launch-v2.webp')]">
+      class="flex relative items-center justify-center bg-black w-screen h-screen bg-center bg-cover snap-start">
       <audio loop autoplay>
         <source src="assets/audio/BL_S03_Invite_Soundtrack.mp3" type="audio/mpeg">
       </audio>
@@ -115,8 +134,8 @@ Join the Bankless DAO dev team: https://discord.gg/MFC2eHjhGQ
         scroll down
       </div>
     </section>
-    <section id="section-2" class="relative bg-black w-full h-screen bg-center bg-cover snap-start">
-      <div id="section-2-player" class="player flex items-center justify-center w-full h-screen bg-center"></div>
+    <section id="section-2" class="relative bg-black w-screen h-screen bg-center bg-cover snap-start">
+      <div id="section-2-player"></div>
       <!-- Arrow down -->
       <div class="absolute bottom-5 right-5" style="text-align: -webkit-right">
         <div class="animate-bounce w-6 h-6">
@@ -128,7 +147,7 @@ Join the Bankless DAO dev team: https://discord.gg/MFC2eHjhGQ
       </div>
     </section>
     <section id="section-3"
-      class="flex items-center justify-center w-full bg-black h-screen bg-center bg-cover snap-start relative bg-[url('assets/videos/S03A-Background.webp')]">
+      class="flex relative items-center justify-center bg-black w-screen h-screen bg-center bg-cover snap-start">
       <div class="absolute max-w-[92%] text-center p-10 bg-black/30 rounded-lg">
         <div class="text-4xl font-bold fit">Season&nbsp;3&nbsp;Launch</div>
         <div class="text-3xl mt-3">
@@ -185,7 +204,18 @@ Join the Bankless DAO dev team: https://discord.gg/MFC2eHjhGQ
   <script type="text/javascript">
     // load background videos
     $(function () {
-      $('#section-2-player').YTPlayer({ videoURL: 'm1J_IGZl-QA', containment: 'self', autoPlay: true, loop: true, mute: true, startAt: 0, opacity: 1, showControls: false, realfullscreen: true, optimizeDisplay: true, anchor: 'center center' })
+      $('#section-2-player').YTPlayer({
+        videoURL: 'm1J_IGZl-QA',
+        containment: '#section-2',
+        autoPlay: true,
+        loop: true,
+        mute: true,
+        startAt: 0,
+        opacity: 1,
+        showControls: false,
+        realfullscreen: true,
+        optimizeDisplay: true,
+      })
     });
     // resize text if window width < 1000px
     if (window.innerWidth < 1000)
